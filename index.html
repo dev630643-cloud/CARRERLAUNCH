@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CareerLaunch helps students learn resume building and interview preparation. From Resume to Job Offer.">
+    <meta name="description"
+        content="CareerLaunch helps students learn resume building and interview preparation. From Resume to Job Offer.">
     <title>CareerLaunch | Your Career Starts Here</title>
-    
+
     <!-- Google Fonts for modern typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <!-- FontAwesome for standard icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
+    <!-- html2pdf for Resume PDF Download -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
     <!-- Custom Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
     <!-- Navigation Bar -->
@@ -37,6 +43,7 @@
                     <li><a href="#interview-prep" class="nav-links">Interview Prep</a></li>
                     <li><a href="#questions" class="nav-links">Questions</a></li>
                     <li><a href="#skills" class="nav-links">Skills</a></li>
+                    <li><a href="#resume-builder" class="nav-links">Resume Builder</a></li>
                     <li><a href="#contact" class="nav-links">Contact</a></li>
                 </ul>
             </nav>
@@ -48,7 +55,8 @@
         <div class="container hero-content fade-in-section">
             <span class="badge">Your Career Starts Here</span>
             <h1 class="hero-title">Prepare. Perform. <span class="text-blue">Get Hired.</span></h1>
-            <p class="hero-subtitle">From Resume to Job Offer - we give you the tools, tips, and templates to start your professional journey with confidence.</p>
+            <p class="hero-subtitle">From Resume to Job Offer - we give you the tools, tips, and templates to start your
+                professional journey with confidence.</p>
             <div class="hero-buttons">
                 <a href="#resume-guide" class="btn btn-primary">Get Started <i class="fa-solid fa-arrow-right"></i></a>
                 <a href="#interview-prep" class="btn btn-secondary">Learn More</a>
@@ -62,9 +70,10 @@
             <div class="section-title">
                 <h2>Resume Guide</h2>
                 <div class="underline"></div>
-                <p>A resume is your personal marketing tool. It’s a summary of your skills, education, and experience designed to showcase why you are the perfect fit for a job.</p>
+                <p>A resume is your personal marketing tool. It’s a summary of your skills, education, and experience
+                    designed to showcase why you are the perfect fit for a job.</p>
             </div>
-            
+
             <div class="cards-grid">
                 <!-- Key Section 1 -->
                 <div class="card">
@@ -121,20 +130,22 @@
                 <h2>Quick Resume Tips</h2>
                 <div class="underline"></div>
             </div>
-            
+
             <div class="tips-grid">
                 <div class="tip-item">
                     <div class="tip-number">1</div>
                     <div class="tip-content">
                         <h4>Keep it short</h4>
-                        <p>Recruiters spend just seconds scanning a resume. Keep it to one page if you're a student or recent graduate.</p>
+                        <p>Recruiters spend just seconds scanning a resume. Keep it to one page if you're a student or
+                            recent graduate.</p>
                     </div>
                 </div>
                 <div class="tip-item">
                     <div class="tip-number">2</div>
                     <div class="tip-content">
                         <h4>Use bullet points</h4>
-                        <p>Avoid long paragraphs. Use clear, concise bullet points to make your experience easy to read.</p>
+                        <p>Avoid long paragraphs. Use clear, concise bullet points to make your experience easy to read.
+                        </p>
                     </div>
                 </div>
                 <div class="tip-item">
@@ -161,24 +172,28 @@
             <div class="section-title">
                 <h2>Interview Preparation</h2>
                 <div class="underline"></div>
-                <p>Acing an interview requires more than just knowing your resume. It's about presentation and confidence.</p>
+                <p>Acing an interview requires more than just knowing your resume. It's about presentation and
+                    confidence.</p>
             </div>
 
             <div class="cards-grid">
                 <div class="card">
                     <div class="card-icon"><i class="fa-solid fa-comments"></i></div>
                     <h3>Types of Interviews</h3>
-                    <p>Be prepared for behavioral, technical, panel, and phone/video interviews. Each requires a slightly different approach.</p>
+                    <p>Be prepared for behavioral, technical, panel, and phone/video interviews. Each requires a
+                        slightly different approach.</p>
                 </div>
                 <div class="card">
                     <div class="card-icon"><i class="fa-solid fa-user-tie"></i></div>
                     <h3>Body Language Tips</h3>
-                    <p>Maintain eye contact, sit up straight, offer a firm handshake, and remember to smile. Non-verbal cues matter.</p>
+                    <p>Maintain eye contact, sit up straight, offer a firm handshake, and remember to smile. Non-verbal
+                        cues matter.</p>
                 </div>
                 <div class="card">
                     <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
                     <h3>Confidence Tips</h3>
-                    <p>Practice common questions out loud, research the company thoroughly, and take deep breaths to calm your nerves.</p>
+                    <p>Practice common questions out loud, research the company thoroughly, and take deep breaths to
+                        calm your nerves.</p>
                 </div>
             </div>
         </div>
@@ -199,16 +214,20 @@
                         Tell me about yourself <i class="fa-solid fa-chevron-down"></i>
                     </button>
                     <div class="accordion-content">
-                        <p><strong>Sample Answer:</strong> Keep it professional. Start with your current situation (e.g., degree), transition into relevant past experiences, and finish with why you're excited about this specific opportunity.</p>
+                        <p><strong>Sample Answer:</strong> Keep it professional. Start with your current situation
+                            (e.g., degree), transition into relevant past experiences, and finish with why you're
+                            excited about this specific opportunity.</p>
                     </div>
                 </div>
-                
+
                 <div class="accordion-item">
                     <button class="accordion-button">
                         Why should we hire you? <i class="fa-solid fa-chevron-down"></i>
                     </button>
                     <div class="accordion-content">
-                        <p><strong>Sample Answer:</strong> Review the job description and align your top 2-3 skills with their needs. "You should hire me because my background in X and my ability to do Y will help your team achieve Z."</p>
+                        <p><strong>Sample Answer:</strong> Review the job description and align your top 2-3 skills with
+                            their needs. "You should hire me because my background in X and my ability to do Y will help
+                            your team achieve Z."</p>
                     </div>
                 </div>
 
@@ -217,7 +236,9 @@
                         Strengths and weaknesses <i class="fa-solid fa-chevron-down"></i>
                     </button>
                     <div class="accordion-content">
-                        <p><strong>Sample Answer:</strong> Mention a real strength relevant to the job (e.g., problem-solving). For weaknesses, name a real weakness but quickly explain the steps you are actively taking to improve upon it.</p>
+                        <p><strong>Sample Answer:</strong> Mention a real strength relevant to the job (e.g.,
+                            problem-solving). For weaknesses, name a real weakness but quickly explain the steps you are
+                            actively taking to improve upon it.</p>
                     </div>
                 </div>
 
@@ -226,7 +247,9 @@
                         Where do you see yourself in 5 years? <i class="fa-solid fa-chevron-down"></i>
                     </button>
                     <div class="accordion-content">
-                        <p><strong>Sample Answer:</strong> Show ambition and ensure your goals align with the role. "In 5 years, I hope to have deepened my expertise in [field] and taken on more leadership responsibilities within this company."</p>
+                        <p><strong>Sample Answer:</strong> Show ambition and ensure your goals align with the role. "In
+                            5 years, I hope to have deepened my expertise in [field] and taken on more leadership
+                            responsibilities within this company."</p>
                     </div>
                 </div>
             </div>
@@ -246,17 +269,97 @@
                 <div class="skill-box">
                     <i class="fa-solid fa-bullhorn skill-icon"></i>
                     <h3>Communication</h3>
-                    <p>Active listening, clear writing, and articulate speaking are universally required across all roles.</p>
+                    <p>Active listening, clear writing, and articulate speaking are universally required across all
+                        roles.</p>
                 </div>
                 <div class="skill-box">
                     <i class="fa-solid fa-clock skill-icon"></i>
                     <h3>Time Management</h3>
-                    <p>Prioritizing tasks, meeting deadlines, and efficiently managing your workload shows reliability.</p>
+                    <p>Prioritizing tasks, meeting deadlines, and efficiently managing your workload shows reliability.
+                    </p>
                 </div>
                 <div class="skill-box">
                     <i class="fa-solid fa-laptop-code skill-icon"></i>
                     <h3>Basic Digital Skills</h3>
                     <p>Proficiency in common software (Word, Excel), email etiquette, and basic troubleshooting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Builder Section -->
+    <section id="resume-builder" class="section bg-light">
+        <div class="container fade-in-section">
+            <div class="section-title">
+                <h2>Resume Builder</h2>
+                <div class="underline"></div>
+                <p>Create a professional resume in minutes. Fill in your details, pick a template, and download as PDF.</p>
+            </div>
+
+            <div class="builder-layout">
+                <!-- Resume Form -->
+                <div class="builder-form-card">
+                    <div class="builder-form-header">
+                        <i class="fa-solid fa-file-lines"></i>
+                        <h3>Your Details</h3>
+                    </div>
+                    <form id="resumeForm">
+                        <div class="builder-form-group">
+                            <label for="rb-name"><i class="fa-solid fa-user"></i> Full Name</label>
+                            <input type="text" id="rb-name" placeholder="e.g. Jane Doe" required>
+                        </div>
+                        <div class="builder-form-group">
+                            <label for="rb-email"><i class="fa-solid fa-envelope"></i> Email</label>
+                            <input type="email" id="rb-email" placeholder="e.g. jane@example.com" required>
+                        </div>
+                        <div class="builder-form-group">
+                            <label for="rb-phone"><i class="fa-solid fa-phone"></i> Phone</label>
+                            <input type="text" id="rb-phone" placeholder="e.g. +1 555 123-4567">
+                        </div>
+                        <div class="builder-form-group">
+                            <label for="rb-education"><i class="fa-solid fa-graduation-cap"></i> Education</label>
+                            <textarea id="rb-education" rows="3" placeholder="e.g. B.Sc Computer Science, MIT, 2024"></textarea>
+                        </div>
+                        <div class="builder-form-group">
+                            <label for="rb-skills"><i class="fa-solid fa-star"></i> Skills</label>
+                            <textarea id="rb-skills" rows="3" placeholder="e.g. JavaScript, Python, Leadership"></textarea>
+                        </div>
+                        <div class="builder-form-group">
+                            <label for="rb-experience"><i class="fa-solid fa-briefcase"></i> Experience</label>
+                            <textarea id="rb-experience" rows="3" placeholder="e.g. Software Intern at Google, Summer 2023"></textarea>
+                        </div>
+                        <div class="builder-form-group">
+                            <label for="rb-projects"><i class="fa-solid fa-diagram-project"></i> Projects</label>
+                            <textarea id="rb-projects" rows="3" placeholder="e.g. Built an AI chatbot using React and OpenAI API"></textarea>
+                        </div>
+                        <div class="builder-form-group">
+                            <label for="rb-template"><i class="fa-solid fa-palette"></i> Template</label>
+                            <select id="rb-template">
+                                <option value="template-clean">Clean Modern</option>
+                                <option value="template-professional">Professional Classic</option>
+                                <option value="template-creative">Creative Bold</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary submit-btn">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> Generate Resume
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Resume Preview -->
+                <div class="builder-preview-area">
+                    <div class="builder-preview-header">
+                        <h3><i class="fa-solid fa-eye"></i> Live Preview</h3>
+                        <button class="btn btn-secondary btn-download" id="downloadPdfBtn" style="display:none;">
+                            <i class="fa-solid fa-download"></i> Download PDF
+                        </button>
+                    </div>
+                    <div class="builder-preview-card" id="resumePreview">
+                        <div class="preview-placeholder">
+                            <i class="fa-solid fa-file-circle-plus"></i>
+                            <p>Fill in your details and click <strong>"Generate Resume"</strong> to see your resume here.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -295,22 +398,23 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="contact-form">
                     <form id="contactForm">
                         <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" placeholder="John Doe" required>
+                            <label for="contact-name">Full Name</label>
+                            <input type="text" id="contact-name" placeholder="John Doe" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" placeholder="john@example.com" required>
+                            <label for="contact-email">Email Address</label>
+                            <input type="email" id="contact-email" placeholder="john@example.com" required>
                         </div>
                         <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" rows="5" placeholder="How can we help you?" required></textarea>
+                            <label for="contact-message">Message</label>
+                            <textarea id="contact-message" rows="5" placeholder="How can we help you?" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary submit-btn">Send Message <i class="fa-regular fa-paper-plane"></i></button>
+                        <button type="submit" class="btn btn-primary submit-btn">Send Message <i
+                                class="fa-regular fa-paper-plane"></i></button>
                     </form>
                 </div>
             </div>
@@ -335,4 +439,5 @@
     <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
+
 </html>

@@ -95,9 +95,9 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault(); // Prevent default form submission
             
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
+            const name = document.getElementById('contact-name').value.trim();
+            const email = document.getElementById('contact-email').value.trim();
+            const message = document.getElementById('contact-message').value.trim();
 
             if (name && email && message) {
                 // Determine if it's a valid simple email format
@@ -127,9 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             } else {
                 entry.target.classList.add('is-visible');
-                // observer.unobserve(entry.target); // Unobserving makes it animate only once
-                // If you want it to trigger every time, remove the unobserve.
-                // Keeping unobserve uncommented out for performance and single-trigger animation.
                 observer.unobserve(entry.target); 
             }
         });
@@ -139,4 +136,97 @@ document.addEventListener('DOMContentLoaded', () => {
         appearOnScroll.observe(el);
     });
 
+    // 7. Resume Builder
+    const resumeForm = document.getElementById('resumeForm');
+    const resumePreview = document.getElementById('resumePreview');
+    const downloadPdfBtn = document.getElementById('downloadPdfBtn');
+
+    if (resumeForm) {
+        resumeForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const data = {
+                name: document.getElementById('rb-name').value.trim(),
+                email: document.getElementById('rb-email').value.trim(),
+                phone: document.getElementById('rb-phone').value.trim(),
+                education: document.getElementById('rb-education').value.trim(),
+                skills: document.getElementById('rb-skills').value.trim(),
+                experience: document.getElementById('rb-experience').value.trim(),
+                projects: document.getElementById('rb-projects').value.trim(),
+                template: document.getElementById('rb-template').value
+            };
+
+            generateResume(data);
+        });
+    }
+
+    function generateResume(data) {
+        // Build the resume HTML
+        let sectionsHTML = '';
+
+        if (data.education) {
+            sectionsHTML += `
+                <div class="resume-section">
+                    <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+                    <p>${data.education}</p>
+                </div>`;
+        }
+        if (data.skills) {
+            sectionsHTML += `
+                <div class="resume-section">
+                    <h3><i class="fa-solid fa-star"></i> Skills</h3>
+                    <p>${data.skills}</p>
+                </div>`;
+        }
+        if (data.experience) {
+            sectionsHTML += `
+                <div class="resume-section">
+                    <h3><i class="fa-solid fa-briefcase"></i> Experience</h3>
+                    <p>${data.experience}</p>
+                </div>`;
+        }
+        if (data.projects) {
+            sectionsHTML += `
+                <div class="resume-section">
+                    <h3><i class="fa-solid fa-diagram-project"></i> Projects</h3>
+                    <p>${data.projects}</p>
+                </div>`;
+        }
+
+        resumePreview.className = `builder-preview-card resume-output ${data.template}`;
+        resumePreview.innerHTML = `
+            <h2>${data.name}</h2>
+            <div class="resume-contact">
+                ${data.email ? `<span><i class="fa-solid fa-envelope"></i> ${data.email}</span>` : ''}
+                ${data.phone ? `<span><i class="fa-solid fa-phone"></i> ${data.phone}</span>` : ''}
+            </div>
+            ${sectionsHTML}
+        `;
+
+        // Show the download button
+        if (downloadPdfBtn) {
+            downloadPdfBtn.style.display = 'inline-flex';
+        }
+
+        // Scroll to preview on mobile
+        if (window.innerWidth < 992) {
+            resumePreview.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+
+    // PDF Download
+    if (downloadPdfBtn) {
+        downloadPdfBtn.addEventListener('click', function() {
+            const opt = {
+                margin: 0.5,
+                filename: 'my-resume.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+            html2pdf().set(opt).from(resumePreview).save();
+        });
+    }
+
 });
+

@@ -545,6 +545,277 @@ footer {
 }
 
 /* ==================================
+   Resume Builder Section
+   ================================== */
+.builder-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.builder-form-card {
+    background: var(--bg-white);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: var(--box-shadow);
+    border: 1px solid var(--border-color);
+}
+
+.builder-form-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--bg-light);
+}
+
+.builder-form-header i {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.builder-form-header h3 {
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+.builder-form-group {
+    margin-bottom: 1.2rem;
+}
+
+.builder-form-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.builder-form-group label i {
+    color: var(--primary-color);
+    margin-right: 0.3rem;
+    width: 16px;
+    text-align: center;
+}
+
+.builder-form-group input,
+.builder-form-group textarea,
+.builder-form-group select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    transition: var(--transition);
+    background: var(--bg-white);
+    color: var(--text-color);
+}
+
+.builder-form-group input:focus,
+.builder-form-group textarea:focus,
+.builder-form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
+}
+
+.builder-form-group textarea {
+    resize: vertical;
+}
+
+.builder-form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236c757d' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+}
+
+/* Preview Area */
+.builder-preview-area {
+    position: sticky;
+    top: 100px;
+}
+
+.builder-preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.builder-preview-header h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-color);
+}
+
+.builder-preview-header h3 i {
+    color: var(--primary-color);
+}
+
+.btn-download {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.85rem;
+}
+
+.builder-preview-card {
+    background: var(--bg-white);
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    border: 1px solid var(--border-color);
+    min-height: 500px;
+    overflow: hidden;
+}
+
+.preview-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+    color: var(--text-light);
+    text-align: center;
+    padding: 3rem;
+}
+
+.preview-placeholder i {
+    font-size: 4rem;
+    color: rgba(13, 110, 253, 0.15);
+    margin-bottom: 1.5rem;
+}
+
+.preview-placeholder p {
+    font-size: 1rem;
+    max-width: 280px;
+}
+
+/* ---- Resume Templates ---- */
+
+/* Shared Resume Styles */
+.resume-output {
+    padding: 2.5rem;
+    animation: fadeInResume 0.5s ease-out;
+}
+
+@keyframes fadeInResume {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.resume-output h2 {
+    margin-bottom: 0.3rem;
+}
+
+.resume-output .resume-contact {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.resume-output .resume-contact span {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.resume-output .resume-contact i {
+    color: var(--primary-color);
+}
+
+.resume-output .resume-section {
+    margin-bottom: 1.5rem;
+}
+
+.resume-output .resume-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.3rem;
+}
+
+.resume-output .resume-section p {
+    white-space: pre-line;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* Template: Clean Modern */
+.template-clean h2 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.template-clean .resume-section h3 {
+    color: var(--primary-color);
+    border-bottom: 2px solid rgba(13, 110, 253, 0.15);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.95rem;
+}
+
+/* Template: Professional Classic */
+.template-professional h2 {
+    font-size: 2rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #1a1a2e;
+    text-align: center;
+    border-bottom: 3px double #1a1a2e;
+    padding-bottom: 0.5rem;
+}
+
+.template-professional .resume-contact {
+    justify-content: center;
+    color: #555;
+}
+
+.template-professional .resume-section h3 {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #1a1a2e;
+    border-bottom: 1px solid #ccc;
+}
+
+.template-professional .resume-section p {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #444;
+}
+
+/* Template: Creative Bold */
+.template-creative {
+    background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%);
+    border-radius: 12px;
+    color: #fff;
+}
+
+.template-creative h2 {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.template-creative .resume-contact {
+    color: rgba(255,255,255,0.85);
+}
+
+.template-creative .resume-contact i {
+    color: rgba(255,255,255,0.7);
+}
+
+.template-creative .resume-section h3 {
+    color: #fff;
+    border-bottom: 2px solid rgba(255,255,255,0.25);
+}
+
+.template-creative .resume-section p {
+    color: rgba(255,255,255,0.9);
+}
+
+/* ==================================
    Animations
    ================================== */
 .fade-in-section {
@@ -573,6 +844,15 @@ footer {
     
     .contact-grid {
         grid-template-columns: 1fr;
+    }
+
+    .builder-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .builder-preview-area {
+        position: relative;
+        top: 0;
     }
 }
 
@@ -632,6 +912,14 @@ footer {
     }
     
     .contact-grid {
+        padding: 1.5rem;
+    }
+
+    .builder-form-card {
+        padding: 1.5rem;
+    }
+
+    .resume-output {
         padding: 1.5rem;
     }
 }
