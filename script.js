@@ -217,14 +217,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // PDF Download
     if (downloadPdfBtn) {
         downloadPdfBtn.addEventListener('click', function() {
+            // Ensure resume preview is visible
+            resumePreview.style.display = 'block';
+
             const opt = {
                 margin: 0.5,
-                filename: 'my-resume.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+                filename: 'resume.pdf',
+                image: { type: 'jpeg', quality: 1 },
+                html2canvas: { scale: 2, useCORS: true },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
             };
-            html2pdf().set(opt).from(resumePreview).save();
+
+            // Delay to allow full rendering before export
+            setTimeout(() => {
+                html2pdf().set(opt).from(resumePreview).save();
+            }, 700);
         });
     }
 
