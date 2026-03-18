@@ -224,14 +224,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 margin: 0.5,
                 filename: 'resume.pdf',
                 image: { type: 'jpeg', quality: 1 },
-                html2canvas: { scale: 2, useCORS: true },
+                html2canvas: { scale: 3, useCORS: true },
                 jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
             };
 
             // Delay to allow full rendering before export
             setTimeout(() => {
                 html2pdf().set(opt).from(resumePreview).save();
-            }, 700);
+            }, 800);
         });
     }
 
