@@ -665,12 +665,13 @@ footer {
 }
 
 .builder-preview-card {
-    background: var(--bg-white);
+    background: #ffffff;
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     border: 1px solid var(--border-color);
+    width: 794px;
     min-height: 500px;
-    max-width: 800px;
+    max-width: 100%;
     overflow: hidden;
 }
 
@@ -700,13 +701,28 @@ footer {
 
 /* Shared Resume Styles */
 .resume-output {
-    padding: 2.5rem;
+    padding: 40px;
     animation: fadeInResume 0.5s ease-out;
+    background: #ffffff;
+    color: #000000;
+    font-size: 14px;
+    line-height: 1.6;
 }
 
 @keyframes fadeInResume {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
+
+}
+
+.resume-output h2, .resume-output h3, .resume-output h4 {
+    color: #000000 !important;
+    margin-bottom: 5px;
+}
+
+.resume-output p {
+    color: #000000 !important;
+    margin: 5px 0 15px 0;
 }
 
 .resume-output h2 {

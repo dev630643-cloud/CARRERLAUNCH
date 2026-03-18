@@ -214,24 +214,43 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // PDF Download
+    // PDF Download (clone-based for reliable rendering)
     if (downloadPdfBtn) {
         downloadPdfBtn.addEventListener('click', function() {
-            // Ensure resume preview is visible
-            resumePreview.style.display = 'block';
+            // Clone the resume to avoid rendering issues
+            const clone = resumePreview.cloneNode(true);
+            clone.style.display = 'block';
+            clone.style.background = '#ffffff';
+            clone.style.color = '#000000';
+            clone.style.width = '794px';
+            clone.style.minHeight = '1123px';
+            clone.style.padding = '40px';
+            clone.style.position = 'absolute';
+            clone.style.left = '-9999px';
+
+            document.body.appendChild(clone);
 
             const opt = {
-                margin: 0.5,
+                margin: 0,
                 filename: 'resume.pdf',
                 image: { type: 'jpeg', quality: 1 },
-                html2canvas: { scale: 3, useCORS: true },
-                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+                html2canvas: {
+                    scale: 4,
+                    backgroundColor: '#ffffff',
+                    useCORS: true
+                },
+                jsPDF: {
+                    unit: 'px',
+                    format: [794, 1123],
+                    orientation: 'portrait'
+                }
             };
 
-            // Delay to allow full rendering before export
             setTimeout(() => {
-                html2pdf().set(opt).from(resumePreview).save();
-            }, 800);
+                html2pdf().set(opt).from(clone).save().then(() => {
+                    document.body.removeChild(clone);
+                });
+            }, 1000);
         });
     }
 
