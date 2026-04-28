@@ -254,5 +254,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 8. Chatbot Toggle Logic
+    const chatbotToggle = document.getElementById('chatbot-toggle');
+    const chatbotWindow = document.getElementById('chatbot-window');
+    const chatbotCloseBtn = document.getElementById('chatbot-close-btn');
+    const chatbotIconOpen = document.getElementById('chatbot-icon-open');
+    const chatbotIconClose = document.getElementById('chatbot-icon-close');
+
+    if (chatbotToggle && chatbotWindow) {
+        chatbotToggle.addEventListener('click', () => {
+            const isOpen = chatbotWindow.classList.toggle('active');
+            
+            // Toggle icons
+            if (isOpen) {
+                chatbotIconOpen.style.display = 'none';
+                chatbotIconClose.style.display = 'block';
+            } else {
+                chatbotIconOpen.style.display = 'block';
+                chatbotIconClose.style.display = 'none';
+            }
+        });
+    }
+
+    if (chatbotCloseBtn) {
+        chatbotCloseBtn.addEventListener('click', () => {
+            chatbotWindow.classList.remove('active');
+            chatbotIconOpen.style.display = 'block';
+            chatbotIconClose.style.display = 'none';
+        });
+    }
+
 });
 

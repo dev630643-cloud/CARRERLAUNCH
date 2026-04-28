@@ -461,6 +461,41 @@
         </div>
     </footer>
 
+    <!-- Chatbot Widget -->
+    <div id="chatbot-widget">
+        <!-- Chatbot Toggle Button -->
+        <button id="chatbot-toggle" aria-label="Open Chatbot">
+            <i class="fa-solid fa-comment-dots" id="chatbot-icon-open"></i>
+            <i class="fa-solid fa-xmark" id="chatbot-icon-close" style="display:none;"></i>
+            <span class="chatbot-pulse"></span>
+        </button>
+        <!-- Chatbot Window -->
+        <div id="chatbot-window">
+            <div class="chatbot-header">
+                <div class="chatbot-header-info">
+                    <div class="chatbot-avatar">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div>
+                        <h4>CareerLaunch AI</h4>
+                        <span class="chatbot-status">● Online</span>
+                    </div>
+                </div>
+                <button id="chatbot-close-btn" aria-label="Close Chatbot">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <iframe
+                id="chatbot-iframe"
+                src="https://www.chatbase.co/chatbot-iframe/I6AMEmzqo3Lpzeh5vsjso"
+                width="100%"
+                style="height: 100%; border: none;"
+                frameborder="0"
+                allow="microphone"
+            ></iframe>
+        </div>
+    </div>
+
     <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
